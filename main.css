@@ -1,0 +1,39 @@
+body {
+    font-family: 'Chicle', cursive;
+    font-size: 30px;
+}
+.name-page {
+	width: 30%;
+	float: left;
+	border: 1px solid gray;
+	height: 550px;
+	border-radius: 10px 0 0 10px;
+    position: relative;
+    font-size: 70%;
+}
+.book-content {
+	width: 70%;
+	float: left;
+	border: 1px solid gray;
+	height: 550px;
+	border-radius: 0 10px 10px 0;
+	padding: 20px;
+}
+#search {
+    max-height: 30px;
+}
+.transfer {
+    background-image: url(icons/torrent-icon.png);
+    height: 27px;
+    width: 30px;
+}
+.remove {
+    background-image: url(icons/delete.png);
+    height: 27px;
+    width: 30px;
+}
+.edit {
+    background-image: url(icons/edit-validated-icon.png);
+    height: 27px;
+    width: 30px;
+}

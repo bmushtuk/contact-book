@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>My Contact Book</title>
+        <meta name="description" content="The HTML5 Herald">
+        <meta name="author" content="SitePoint">
+        <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="main.css">
+    </head>
+
+<body>
+    <div class="container">
+        <h1 class="display-3 text-center">Contact Book</h1>
+        <div class="row main-content mt-3">
+            <div class="book-content col-md-9 col-md-push-3">
+                <form role="form">
+				  <div class="form-group mb-0">
+				    <label for="full-name" class="mt-0 mb-0 col-sm-6 control-label">Full Name</label>
+				    <div class="col-sm-4">
+				      <input type="text" class="form-control" id="full-name" placeholder="Full Name" required>
+				    </div>
+				  </div>
+				  <div class="form-group mb-0">
+				    <label for="email" class="mt-0 mb-0 col-sm-6 control-label">Email</label>
+				    <div class="col-sm-4">
+				      <input type="email" class="form-control" id="email" placeholder="Email" required>
+				    </div>
+				  </div>
+				  <div class="form-group mb-0">
+				    <label for="phone" class="mt-0 mb-0 col-sm-6 control-label">Phone</label>
+				    <div class="col-sm-4">
+				      <input type="tel" class="form-control" id="phone" placeholder="Phone" value="+380" required>
+				    </div>
+				  </div>
+				  <div class="form-group mb-0">
+				  	<label for="group" class="mt-0 mb-0 col-sm-6 control-label">Group</label>
+				  	<div class="col-sm-4">
+					    <select id="group" class="form-control" required>
+							  <option>family</option>
+							  <option>work</option>
+							  <option>school</option>
+							  <option>english</option>
+							</select>
+						</div>
+				  </div>
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-6">
+				      <button id="create-contact" type="button" class="btn btn-default">Create</button>
+				    </div>
+				  </div>
+				</form>
+            </div>
+            <div class="name-page col-md-3 col-md-pull-9">
+                <div id="search" class="form-group col-sm-12">
+                <input id="search_by_name" type="text" class="form-control mt-3" placeholder="Search Your Contacts">
+                <img id="search-icon">
+			  </div>
+			  <div id="group-wrapper" class="form-group col-sm-12">
+					<div class="dropdown">
+					  <button class="btn btn-default dropdown-toggle" type="button" id="groups" data-toggle="dropdown">
+					    All Contacts
+					    <span class="caret"></span>
+					  </button>
+					  <ul id="group-list" class="dropdown-menu">
+					    <li>family</li>
+					    <li>work</li>
+					    <li>school</li>
+					    <li>english</li>
+					  </ul>
+					</div>
+				</div>
+                <div class="addbook">
+                    <ul id="names-list" class="contact-names">Names
+                        <!-- <li id="Mark Ruffalo" class="person">Mark Ruffalo</li>
+                        <li id="Eric Conovan" class="person">Eric Conovan</li>
+                        <li id="Deborah Johson" class="person">Deborah Johnson</li>
+                        <li id="Andrew Hopkins" class="person">Andrew Hopkins</li>
+                        <li id="Jerry Wright" class="person">Jerry Wright</li>
+                        <li id="John Smith" class="person">John Smith</li> -->
+                    </ul>
+                </div>
+                <button id="add-contact" type="button" class="btn btn-block btn-primary">Add New Contact</button>
+                <button id="add-group" type="button" class="btn btn-block btn-success">Add New Group</button>
+            </div>
+
+
+        </div>
+
+
+
+    
+    
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+
+</body>
+</html>
