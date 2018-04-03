@@ -24,16 +24,16 @@ body {
 }
 .transfer {
     background-image: url(icons/torrent-icon.png);
-    height: 27px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
 }
 .remove {
     background-image: url(icons/delete.png);
-    height: 27px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
 }
 .edit {
     background-image: url(icons/edit-validated-icon.png);
-    height: 27px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
 }

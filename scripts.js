@@ -17,15 +17,25 @@ var addBookDiv = document.querySelector('.addbook');
 
 
 
+
+var fullName = document.getElementById("full-name").value;
+var email = document.getElementById("email").value;
+var phone = document.getElementById("phone").value;
+var group = document.getElementById("group").value;
+
 // Events
 
 createBtn.addEventListener('click', () => {
     let ul = document.querySelectorAll(".contact-names")[0];
     let li = document.createElement('li');
-    li.textContent = fullname.value;
+	if (fullname.length === null, email.length === null, phone.length === null){
+		alert("All blank fields must be filled. Please try again!");
+	} else {
+	li.textContent = fullname.value;
     ul.appendChild(li);
     attachListItemBtns(li);
-    fullname.value = "";
+	fullname.value = "";
+	}
   });
 
 
@@ -43,3 +53,9 @@ function attachListItemBtns(li) {
     edit.textContent = ""
     li.appendChild(edit);
 }
+
+$('body').on('click', '.remove', function(e) {
+    $(this).closest('li').remove();
+});
+
+
