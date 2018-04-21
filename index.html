@@ -15,24 +15,27 @@
     <div class="container">
         <h1 class="display-3 text-center">Contact Book</h1>
         <div class="row main-content mt-3">
-            <div class="book-content col-md-9 col-md-push-3">
-                <form role="form">
+            <div class="book-content">
+                <form id="form" role="form">
 				  <div class="form-group mb-0">
 				    <label for="full-name" class="mt-0 mb-0 col-sm-6 control-label">Full Name</label>
 				    <div class="col-sm-4">
-				      <input type="text" class="form-control" id="full-name" placeholder="Full Name" required>
+							<input type="text" class="form-control" id="full-name" placeholder="Full Name" required>
+							<p class="error-message text-danger d-none">Name is required</p>
 				    </div>
 				  </div>
 				  <div class="form-group mb-0">
 				    <label for="email" class="mt-0 mb-0 col-sm-6 control-label">Email</label>
 				    <div class="col-sm-4">
-				      <input type="email" class="form-control" id="email" placeholder="Email" required>
+							<input type="email" class="form-control" id="email" placeholder="Email" required>
+							<p class="error-message text-danger d-none">Email is required</p>
 				    </div>
 				  </div>
 				  <div class="form-group mb-0">
 				    <label for="phone" class="mt-0 mb-0 col-sm-6 control-label">Phone</label>
 				    <div class="col-sm-4">
-				      <input type="tel" class="form-control" id="phone" placeholder="Phone" value="+380" required>
+							<input type="tel" class="form-control" id="phone" placeholder="Phone" value="+380" required>
+							<p class="error-message text-danger d-none">Phone is required</p>
 				    </div>
 				  </div>
 				  <div class="form-group mb-0">
@@ -47,13 +50,18 @@
 						</div>
 				  </div>
 				  <div class="form-group">
-				    <div class="col-sm-offset-2 col-sm-6">
-				      <button id="create-contact" type="button" class="btn btn-default">Create</button>
+				    <div>
+				      <button id="create-contact" type="button" class="btn btn-default ml-3">Create</button>
 				    </div>
 				  </div>
 				</form>
+				<div id="infos" class="container flex-column d-none">
+					<p id="contact-name">Name:</p>
+					<p id="contact-email">Email:</p>
+					<p id="contact-phone">Phone:</p>
+				</div>
             </div>
-            <div class="name-page col-md-3 col-md-pull-9">
+            <div class="name-page">
                 <div id="search" class="form-group col-sm-12">
                 <input id="search_by_name" type="text" class="form-control mt-3" placeholder="Search Your Contacts">
                 <img id="search-icon">
@@ -82,8 +90,8 @@
                         <li id="John Smith" class="person">John Smith</li> -->
                     </ul>
                 </div>
-                <button id="add-contact" type="button" class="btn btn-block btn-primary">Add New Contact</button>
-                <button id="add-group" type="button" class="btn btn-block btn-success">Add New Group</button>
+                <button id="add-contact" type="button" class="btn btn-primary mx-4">Add New Contact</button>
+                <button id="add-group" type="button" class="btn btn-success mx-4">Add New Group</button>
             </div>
 
 
