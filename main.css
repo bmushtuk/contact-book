@@ -41,3 +41,14 @@ body {
     font-size: 18px;
     margin-left: 10px;
 }
+.add-group {
+    margin-left: 25px;
+    margin-top: 10px;
+}
+.clickable {
+    cursor: pointer;
+}
+#add-contact,
+#add-group {
+    width: 200px;
+}
