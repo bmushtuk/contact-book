@@ -9,6 +9,8 @@ var fullname = document.getElementById('full-name');
 var phone = document.getElementById('phone');
 var email = document.getElementById('email');
 var form = document.getElementById("form");
+var groupList = document.getElementById("group-list");
+var newGroup = document.getElementById("group-add");
 
 // Divs etc.
 var addBookDiv = document.querySelector('.addbook');
@@ -54,6 +56,7 @@ createBtn.addEventListener('click', function() {
     }
     else {
         let li = document.createElement('li');
+        li.className = "clickable";
         li.textContent = fullname.value;
         li.dataset.email = email.value;
         ul.appendChild(li);
@@ -83,6 +86,7 @@ function hideErrorMessage() {
 function renderContacts() {
     contacts.forEach(function(contact){
         let li = document.createElement('li');
+        li.className = "clickable";
         li.textContent = contact.name;
         li.dataset.email = contact.email;
         ul.appendChild(li);
@@ -124,6 +128,19 @@ $('body').on('click', '.edit', function(e) {
     group.value = contact.group;
     infos.classList.add("d-none");
 });
+$('body').on('click', 'li', function(e) {
+    const li = e.target;
+    const index = contacts.findIndex(contact => contact.email === li.dataset.email);
+    const contact = contacts[index];
+    let contactName = document.getElementById("contact-name");
+    let contactPhone = document.getElementById("contact-phone");
+    let contactEmail = document.getElementById("contact-email");
+    infos.classList.remove("d-none");
+    contactName.textContent = "Name: " + contact.name;
+    contactPhone.textContent = "Phone: " + contact.phone;
+    contactEmail.textContent = "Email: " + contact.email;
+
+});
 
 addBtn.addEventListener('click', function() {
     form.classList.remove("d-none");
@@ -133,6 +150,17 @@ addBtn.addEventListener('click', function() {
     phone.value = "";
     infos.classList.add("d-none");
 })
-
+addGroupBtn.addEventListener("click", function(){
+    let groupEl = document.createElement("option");
+    let groupLi = document.createElement("li");
+    if(newGroup.value === "") return false;
+    else{
+    groupEl.textContent = newGroup.value;
+    groupLi.textContent = newGroup.value;
+    group.appendChild(groupEl);
+    groupList.appendChild(groupLi);
+    newGroup.value = "";
+    }
+})
 
 
