@@ -11,7 +11,7 @@ var email = document.getElementById('email');
 var form = document.getElementById("form");
 var groupList = document.getElementById("group-list");
 var newGroup = document.getElementById("group-add");
-
+var searchName = document.getElementById("search-by-name");
 // Divs etc.
 var addBookDiv = document.querySelector('.addbook');
 // List
@@ -56,7 +56,7 @@ createBtn.addEventListener('click', function() {
     }
     else {
         let li = document.createElement('li');
-        li.className = "clickable";
+        li.className = "clickable contact-list-item";
         li.textContent = fullname.value;
         li.dataset.email = email.value;
         ul.appendChild(li);
@@ -86,7 +86,7 @@ function hideErrorMessage() {
 function renderContacts() {
     contacts.forEach(function(contact){
         let li = document.createElement('li');
-        li.className = "clickable";
+        li.className = "clickable contact-list-item";
         li.textContent = contact.name;
         li.dataset.email = contact.email;
         ul.appendChild(li);
@@ -128,8 +128,9 @@ $('body').on('click', '.edit', function(e) {
     group.value = contact.group;
     infos.classList.add("d-none");
 });
-$('body').on('click', 'li', function(e) {
-    const li = e.target;
+$('body').on('click', 'li.contact-list-item', function(e) {
+    
+    const li = e.currentTarget;
     const index = contacts.findIndex(contact => contact.email === li.dataset.email);
     const contact = contacts[index];
     let contactName = document.getElementById("contact-name");
@@ -163,4 +164,29 @@ addGroupBtn.addEventListener("click", function(){
     }
 })
 
-
+function searchFunction() {
+    // Declare variables
+    var searchName, filter, listContainer, listItems, i;
+    var searchName = document.getElementById("search-by-name");
+    var listContainer = document.getElementById("names-list");
+    filter = searchName.value;
+    listItems = listContainer.getElementsByTagName('li');
+    console.log(listItems);
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < listItems.length; i++) {
+        console.log(listItems[i].innerHTML);
+        if (listItems[i].innerHTML.indexOf(filter) > -1) {
+            listItems[i].style.display = "";
+        } else {
+            listItems[i].style.display = "none";
+        }
+    }
+}
+searchName.addEventListener('keypress', function (e) {
+    var key = e.which || e.keyCode;
+    if (key === 13) { // 13 is enter
+      // code for enter
+     
+    }
+    searchFunction();
+});

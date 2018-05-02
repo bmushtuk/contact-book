@@ -63,7 +63,7 @@
             </div>
             <div class="name-page">
                 <div id="search" class="form-group col-sm-12">
-                <input id="search_by_name" type="text" class="form-control mt-3" placeholder="Search Your Contacts">
+                <input id="search-by-name" type="text" class="form-control mt-3" placeholder="Search Your Contacts">
                 <img id="search-icon">
 			  </div>
 			  <div id="group-wrapper" class="form-group col-sm-12">
@@ -73,10 +73,10 @@
 					    <span class="caret"></span>
 					  </button>
 					  <ul id="group-list" class="dropdown-menu">
-					    <li>family</li>
-					    <li>work</li>
-					    <li>school</li>
-					    <li>english</li>
+					    <li class="dropdown-item">family</li>
+					    <li class="dropdown-item">work</li>
+					    <li class="dropdown-item">school</li>
+					    <li class="dropdown-item">english</li>
 					  </ul>
 					</div>
 				</div>
@@ -91,8 +91,9 @@
                     </ul>
                 </div>
                 <button id="add-contact" type="button" class="btn btn-primary mx-4">Add New Contact</button>
+								
+								<input type="text" class="add-group" id="group-add" placeholder="Give a new group name">
 								<button id="add-group" type="button" class="btn btn-success mx-4">Add New Group</button>
-								<input type="text" class="add-group" id="group-add" placeholder="New Group">
             </div>
 
 
