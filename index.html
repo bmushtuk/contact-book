@@ -67,18 +67,14 @@
                 <img id="search-icon">
 			  </div>
 			  <div id="group-wrapper" class="form-group col-sm-12">
-					<div class="dropdown">
-					  <button class="btn btn-default dropdown-toggle" type="button" id="groups" data-toggle="dropdown">
-					    All Contacts
-					    <span class="caret"></span>
-					  </button>
-					  <ul id="group-list" class="dropdown-menu">
-					    <li class="dropdown-item">family</li>
-					    <li class="dropdown-item">work</li>
-					    <li class="dropdown-item">school</li>
-					    <li class="dropdown-item">english</li>
-					  </ul>
-					</div>
+					
+					  <select id="group-list" class="text-center" onchange="dropdownFunc()">
+					    <option id="family-dropdown" class="dropdown-item" data-group = "family">family</option>
+					    <option id="work-dropdown" class="dropdown-item" data-group = "work">work</option>
+					    <option id="school-dropdown" class="dropdown-item" data-group = "school">school</option>
+					    <option id="english-dropdown" class="dropdown-item" data-group = "english">english</option>
+						</select>
+					
 				</div>
                 <div class="addbook">
                     <ul id="names-list" class="contact-names">Names
@@ -98,7 +94,17 @@
 
 
         </div>
+							<!-- The Modal -->
+				<div id="myModal" class="modal">
 
+				<!-- Modal content -->
+					<div class="modal-content">
+						<span class="close">&times;</span>
+						<p id="groupTransfer">Choose a new group for this contact:</p>
+						<button id="modal-btn" type="button" class="btn btn-success">Ok!</button>
+					</div>
+
+				</div>
 
 
     

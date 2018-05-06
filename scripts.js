@@ -3,6 +3,7 @@
 var addBtn = document.getElementById("add-contact");
 var addGroupBtn = document.getElementById("add-group");
 var createBtn = document.getElementById("create-contact");
+var groupFilter = document.getElementById("groups");
 
 // Form Fields
 var fullname = document.getElementById('full-name');
@@ -37,6 +38,7 @@ var contacts = [
         group: "work"
     },
 ]
+
 var fullName = document.getElementById("full-name");
 var email = document.getElementById("email");
 var phone = document.getElementById("phone");
@@ -45,8 +47,9 @@ var group = document.getElementById("group");
 createBtn.addEventListener('click', function() {
     let infos = document.getElementById("infos");
 
-    if (fullName.value.length === 0 ){
+    if (fullName.value.length === 0 || fullName.value === contacts.name ){
         fullName.nextElementSibling.classList.remove("d-none");
+        
     } 
     if (email.value.length === 0) {
         email.nextElementSibling.classList.remove("d-none");
@@ -59,6 +62,7 @@ createBtn.addEventListener('click', function() {
         li.className = "clickable contact-list-item";
         li.textContent = fullname.value;
         li.dataset.email = email.value;
+        li.dataset.group = group.value;
         ul.appendChild(li);
         attachListItemBtns(li);
         infos.classList.remove("d-none");
@@ -89,6 +93,7 @@ function renderContacts() {
         li.className = "clickable contact-list-item";
         li.textContent = contact.name;
         li.dataset.email = contact.email;
+        li.dataset.group = contact.group;
         ul.appendChild(li);
         attachListItemBtns(li);
     })
@@ -153,7 +158,7 @@ addBtn.addEventListener('click', function() {
 })
 addGroupBtn.addEventListener("click", function(){
     let groupEl = document.createElement("option");
-    let groupLi = document.createElement("li");
+    let groupLi = document.createElement("option");
     if(newGroup.value === "") return false;
     else{
     groupEl.textContent = newGroup.value;
@@ -171,10 +176,9 @@ function searchFunction() {
     var listContainer = document.getElementById("names-list");
     filter = searchName.value;
     listItems = listContainer.getElementsByTagName('li');
-    console.log(listItems);
+    
     // Loop through all list items, and hide those who don't match the search query
     for (i = 0; i < listItems.length; i++) {
-        console.log(listItems[i].innerHTML);
         if (listItems[i].innerHTML.indexOf(filter) > -1) {
             listItems[i].style.display = "";
         } else {
@@ -182,11 +186,81 @@ function searchFunction() {
         }
     }
 }
-searchName.addEventListener('keypress', function (e) {
+searchName.addEventListener('keyup', function (e) {
     var key = e.which || e.keyCode;
     if (key === 13) { // 13 is enter
       // code for enter
      
     }
     searchFunction();
+});
+// $('#groups').on('click', function(e) {
+//         // let familyGroup = document.getElementById("family-dropdown");
+//         // let workGroup = document.getElementById("work-dropdown");
+//         // let schoolGroup = document.getElementById("school-dropdown");
+//         // let englishGroup = document.getElementById("english-dropdown");
+//         var lis = ul.children;
+//         console.log(ul.children);
+//         for(var i=0; i<lis.length; i++) {
+//             if(lis[i].dataset.group === "family") {
+//                 console.log(lis[i].dataset.group);
+//                 lis[i].innerHTML = lis[i].innerHTML + " is your family";
+//     }
+//             else if(lis[i].dataset.group === "work") {
+//                 lis[i].innerHTML = lis[i].innerHTML + " is your collegue";
+//     }
+//             else if(lis[i].dataset.group === "school") {
+//                 lis[i].innerHTML = lis[i].innerHTML + " is your school mate";
+//     }
+//             else if(lis[i].dataset.group === "english") {
+//                 lis[i].innerHTML = lis[i].innerHTML + " is your class mate";
+//     }
+// }
+//     return;
+// } )
+function dropdownFunc(){
+    var lists = ul.children;
+    var chosenGroup = document.getElementById("group-list").value;
+    console.log(chosenGroup);
+    for(var i=0; i<lists.length; i++){
+        if(chosenGroup === lists[i].dataset.group){
+            lists[i].style.color = "green";
+            lists[i].style.fontWeight = "bold";
+    }
+        else {
+            lists[i].style.color = "black";
+            lists[i].style.fontWeight = "normal";
+        }
+    }
+}   
+
+$('body').on('click', '.transfer', function(e) {
+    
+    var modal = document.getElementById('myModal');
+    var groupChoice = document.getElementById("groupTransfer");
+    var modalBtn = document.getElementById("modal-btn");
+    
+    var span = document.getElementsByClassName("close")[0];
+    
+        modal.style.display = "block";
+        $("#group-list").clone().appendTo("#groupTransfer");
+        span.onclick = function() {
+        modal.style.display = "none";
+    }
+    
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+
+        }
+    }
+    modalBtn.onclick = function() {
+        var lists = ul.children;
+        var newChosenGroup = document.getElementById("group-list").value;
+        console.log(newChosenGroup);
+        for(var i=0; i<lists.length; i++){
+            lists[i].dataset.group === newChosenGroup;
+            modal.style.display = "none";
+        }
+    }
 });
