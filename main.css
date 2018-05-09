@@ -22,6 +22,16 @@ body {
 #search {
     max-height: 30px;
 }
+#search-by-name {
+    display: block;
+    margin: 0 auto;
+    font-size: 1rem;    
+}
+#full-name {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
 .transfer {
     background-image: url(icons/torrent-icon.png);
     height: 20px;
@@ -50,11 +60,12 @@ body {
 }
 #add-contact,
 #add-group {
-    width: 200px;
+    display: block;
+    margin: 0 auto;
 }
 #group-list {
-    min-height: 70px;
-    min-width: 250px;
+    display: block;
+    margin: 0 auto;
 }
 /* The Modal (background) */
 .modal {
@@ -93,3 +104,26 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
+#names-list {
+    margin-left: 0;
+    padding-left: 25px;
+}
+#group-add {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    font-size: 1rem;
+}
+/*Media Queries*/
+/* @media(min-width: 320px) and (max-width: 544px){
+    #add-group, #add-contact, .contact-list-item {
+    font-size: 15px;
+    font-weight: normal;
+    }
+    #add-group, #add-contact {
+        max-width: 80%;
+        max-height: 80%;
+        font-size: 12px;
+        font-weight: normal;
+    }
+} */

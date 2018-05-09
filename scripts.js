@@ -261,6 +261,7 @@ $('body').on('click', '.transfer', function(e) {
         for(var i=0; i<lists.length; i++){
             lists[i].dataset.group === newChosenGroup;
             modal.style.display = "none";
+            return;
         }
     }
 });
