@@ -1,0 +1,23 @@
+{
+  "name": "contact-book",
+  "version": "1.0.0",
+  "description": "First contact book with JS/jQuery",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bmushtuk/contact-book.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bmushtuk/contact-book/issues"
+  },
+  "homepage": "https://github.com/bmushtuk/contact-book#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0"
+  }
+}

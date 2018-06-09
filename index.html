@@ -41,13 +41,9 @@
 				  <div class="form-group mb-0">
 				  	<label for="group" class="mt-0 mb-0 col-sm-6 control-label">Group</label>
 				  	<div class="col-sm-4">
-					    <select id="group" class="form-control" required>
-							  <option>family</option>
-							  <option>work</option>
-							  <option>school</option>
-							  <option>english</option>
-							</select>
-						</div>
+					    <select id="group-filter" class="form-control" required>
+						</select>
+					</div>
 				  </div>
 				  <div class="form-group">
 				    <div>
@@ -68,12 +64,8 @@
 			  </div>
 			  <div id="group-wrapper" class="form-group">
 					
-					  <select id="group-list" class="text-center" onchange="dropdownFunc()">
-					    <option id="family-dropdown" class="dropdown-item" data-group = "family">family</option>
-					    <option id="work-dropdown" class="dropdown-item" data-group = "work">work</option>
-					    <option id="school-dropdown" class="dropdown-item" data-group = "school">school</option>
-					    <option id="english-dropdown" class="dropdown-item" data-group = "english">english</option>
-						</select>
+					<select id="group-list" class="text-center">
+					</select>
 					
 				</div>
                 <div class="addbook">
@@ -90,30 +82,31 @@
                 </div>
 				<div>
 					<button id="add-contact" type="button" class="btn btn-primary">New Contact</button>
-						<input type="text" class="add-group my-3" id="group-add" placeholder="Give a new group name">
-						<button id="add-group" type="button" class="btn btn-success">New Group</button>
+					<input type="text" class="add-group my-3" id="group-add" placeholder="Give a new group name">
+					<button id="add-group" type="button" class="btn btn-success">New Group</button>
 				</div>
             </div>
-
-
         </div>
-							<!-- The Modal -->
-				<div id="myModal" class="modal">
-
-				<!-- Modal content -->
-					<div class="modal-content">
-						<span class="close">&times;</span>
-						<p id="groupTransfer">Choose a new group for this contact:</p>
-						<button id="modal-btn" type="button" class="btn btn-success">Ok!</button>
-					</div>
-
-				</div>
-
-
-    
-    
     </div>
-    
+	<div id="change-group-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="mySmallModalLabel">Choose a new group for this contact:</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<select id="group-transfer-select" class="form-control" required>
+					</select>
+					<button id="group-modal-btn" type="button" class="btn btn-success">Ok!</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
