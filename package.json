@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/bmushtuk/contact-book/issues"
   },
-  "homepage": "https://github.com/bmushtuk/contact-book#readme"
+  "homepage": "https://github.com/bmushtuk/contact-book#readme",
+  "dependencies": {}
 }
