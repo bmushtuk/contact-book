@@ -1,116 +1,116 @@
 <!doctype html>
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>My Contact Book</title>
-        <meta name="description" content="The HTML5 Herald">
-        <meta name="author" content="SitePoint">
-        <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="main.css">
-    </head>
+  <head>
+      <meta charset="utf-8">
+      <title>My Contact Book</title>
+      <meta name="description" content="The HTML5 Herald">
+      <meta name="author" content="SitePoint">
+      <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="main.css">
+  </head>
 
-<body>
-    <div class="container">
-        <h1 class="display-3 text-center">Contact Book</h1>
-        <div class="row main-content mt-3">
-            <div class="book-content">
-                <form id="form" role="form">
-				  <div class="form-group mb-0">
-				    <label for="full-name" class="mt-0 mb-0 col-sm-6 control-label">Full Name</label>
-				    <div class="col-sm-4">
-							<input type="text" class="form-control" id="full-name" placeholder="Full Name" required>
-							<p class="error-message text-danger d-none">Name is required</p>
-				    </div>
-				  </div>
-				  <div class="form-group mb-0">
-				    <label for="email" class="mt-0 mb-0 col-sm-6 control-label">Email</label>
-				    <div class="col-sm-4">
-							<input type="email" class="form-control" id="email" placeholder="Email" required>
-							<p class="error-message text-danger d-none">Email is required</p>
-				    </div>
-				  </div>
-				  <div class="form-group mb-0">
-				    <label for="phone" class="mt-0 mb-0 col-sm-6 control-label">Phone</label>
-				    <div class="col-sm-4">
-							<input type="tel" class="form-control" id="phone" placeholder="Phone" value="+380" required>
-							<p class="error-message text-danger d-none">Phone is required</p>
-				    </div>
-				  </div>
-				  <div class="form-group mb-0">
-				  	<label for="group" class="mt-0 mb-0 col-sm-6 control-label">Group</label>
-				  	<div class="col-sm-4">
-					    <select id="group-filter" class="form-control" required>
-						</select>
-					</div>
-				  </div>
-				  <div class="form-group">
-				    <div>
-				      <button id="create-contact" type="button" class="btn btn-default ml-3">Create</button>
-				    </div>
-				  </div>
-				</form>
-				<div id="infos" class="container flex-column d-none">
-					<p id="contact-name">Name:</p>
-					<p id="contact-email">Email:</p>
-					<p id="contact-phone">Phone:</p>
-				</div>
-            </div>
-            <div class="name-page">
-                <div id="search" class="form-group">
-                <input id="search-by-name" type="text" class="mt-3" placeholder="Search Your Contacts">
-                <img id="search-icon">
-			  </div>
-			  <div id="group-wrapper" class="form-group">
-					
-					<select id="group-list" class="text-center">
-					</select>
-					
-				</div>
-                <div class="addbook">
-					<p class="text-center">Names</p>
-                    <ul id="names-list" class="contact-names">
-					
-                        <!-- <li id="Mark Ruffalo" class="person">Mark Ruffalo</li>
-                        <li id="Eric Conovan" class="person">Eric Conovan</li>
-                        <li id="Deborah Johson" class="person">Deborah Johnson</li>
-                        <li id="Andrew Hopkins" class="person">Andrew Hopkins</li>
-                        <li id="Jerry Wright" class="person">Jerry Wright</li>
-                        <li id="John Smith" class="person">John Smith</li> -->
-                    </ul>
-                </div>
-				<div>
-					<button id="add-contact" type="button" class="btn btn-primary">New Contact</button>
-					<input type="text" class="add-group my-3" id="group-add" placeholder="Give a new group name">
-					<button id="add-group" type="button" class="btn btn-success">New Group</button>
-				</div>
-            </div>
+  <body>
+  <div class="container">
+      <h1 class="display-3 text-center">Contact Book</h1>
+      <div class="row main-content mt-3">
+          <div class="book-content">
+              <form id="form" role="form">
+        <div class="form-group mb-0">
+          <label for="full-name" class="mt-0 mb-0 col-sm-6 control-label">Full Name</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="full-name" placeholder="Full Name" required>
+            <p class="error-message text-danger d-none">Name is required</p>
+          </div>
         </div>
+        <div class="form-group mb-0">
+          <label for="email" class="mt-0 mb-0 col-sm-6 control-label">Email</label>
+          <div class="col-sm-4">
+            <input type="email" class="form-control" id="email" placeholder="Email" required>
+            <p class="error-message text-danger d-none">Email is required</p>
+          </div>
+        </div>
+        <div class="form-group mb-0">
+          <label for="phone" class="mt-0 mb-0 col-sm-6 control-label">Phone</label>
+          <div class="col-sm-4">
+            <input type="tel" class="form-control" id="phone" placeholder="Phone" value="+380" required>
+            <p class="error-message text-danger d-none">Phone is required</p>
+          </div>
+        </div>
+        <div class="form-group mb-0">
+          <label for="group" class="mt-0 mb-0 col-sm-6 control-label">Group</label>
+          <div class="col-sm-4">
+            <select id="group-filter" class="form-control" required>
+          </select>
+        </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <button id="create-contact" type="button" class="btn btn-default ml-3">Create</button>
+          </div>
+        </div>
+      </form>
+      <div id="infos" class="container flex-column d-none">
+        <p id="contact-name">Name:</p>
+        <p id="contact-email">Email:</p>
+        <p id="contact-phone">Phone:</p>
+      </div>
+          </div>
+          <div class="name-page">
+              <div id="search" class="form-group">
+              <input id="search-by-name" type="text" class="mt-3" placeholder="Search Your Contacts">
+              <img id="search-icon">
+      </div>
+      <div id="group-wrapper" class="form-group">
+        
+        <select id="group-list" class="text-center">
+        </select>
+        
+      </div>
+              <div class="addbook">
+        <p class="text-center">Names</p>
+                  <ul id="names-list" class="contact-names">
+        
+                      <!-- <li id="Mark Ruffalo" class="person">Mark Ruffalo</li>
+                      <li id="Eric Conovan" class="person">Eric Conovan</li>
+                      <li id="Deborah Johson" class="person">Deborah Johnson</li>
+                      <li id="Andrew Hopkins" class="person">Andrew Hopkins</li>
+                      <li id="Jerry Wright" class="person">Jerry Wright</li>
+                      <li id="John Smith" class="person">John Smith</li> -->
+                  </ul>
+              </div>
+      <div>
+        <button id="add-contact" type="button" class="btn btn-primary">New Contact</button>
+        <input type="text" class="add-group my-3" id="group-add" placeholder="Give a new group name">
+        <button id="add-group" type="button" class="btn btn-success">New Group</button>
+      </div>
+          </div>
+      </div>
+  </div>
+  <div id="change-group-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="mySmallModalLabel">Choose a new group for this contact:</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <select id="group-transfer-select" class="form-control" required>
+        </select>
+        <button id="group-modal-btn" type="button" class="btn btn-success">Ok!</button>
+      </div>
     </div>
-	<div id="change-group-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-sm">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="mySmallModalLabel">Choose a new group for this contact:</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<select id="group-transfer-select" class="form-control" required>
-					</select>
-					<button id="group-modal-btn" type="button" class="btn btn-success">Ok!</button>
-				</div>
-			</div>
-		</div>
-	</div>
+  </div>
+  </div>
 
-	
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="scripts.js"></script>
 
-</body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="scripts.js"></script>
+
+  </body>
 </html>
