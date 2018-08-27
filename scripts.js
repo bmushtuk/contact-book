@@ -113,10 +113,6 @@ jQuery(function($) {
         remove.className = 'ml-2 remove';
         remove.textContent = '';
         li.appendChild(remove);
-        let edit  = document.createElement('button');
-        edit.className = 'ml-2 edit';
-        edit.textContent = '';
-        li.appendChild(edit);
         form.classList.add('d-none');
     }
 
@@ -124,19 +120,6 @@ jQuery(function($) {
         $(this).closest('li').remove();
     });
 
-    $('body').on('click', '.edit', function(e) {
-        const li = e.target.parentNode;
-        const index = contacts.findIndex(contact => contact.email === li.dataset.email);
-        const contact = contacts[index];
-        form.classList.remove('d-none');
-        hideErrorMessage();
-        fullname.value = contact.name; 
-        email.value = contact.email;
-        phone.value = contact.phone;
-        group.value = contact.group;
-        infos.classList.add('d-none');
-
-    });
     $('body').on('click', 'li.contact-list-item', function(e) {
         
         const li = e.currentTarget;

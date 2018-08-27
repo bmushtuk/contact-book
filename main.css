@@ -42,11 +42,6 @@ body {
     height: 20px;
     width: 20px;
 }
-.edit {
-    background-image: url(icons/edit-validated-icon.png);
-    height: 20px;
-    width: 20px;
-}
 .error-message {
     font-size: 18px;
     margin-left: 10px;
